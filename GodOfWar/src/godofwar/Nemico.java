@@ -32,5 +32,17 @@ public class Nemico {
     public int getAttacco() {
         return attacco;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setVita(int vita) {
+        this.vita = vita;
+    }
+
+    public void setAttacco(int attacco) {
+        this.attacco = attacco;
+    }
     
 }

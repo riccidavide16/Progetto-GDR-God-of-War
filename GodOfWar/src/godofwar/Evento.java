@@ -4,10 +4,14 @@
  */
 package godofwar;
 
+import java.util.Random;
+
 /**
  *
  * @author Utente
  */
 public class Evento {
+    
+    Random r = new Random();
     
 }
