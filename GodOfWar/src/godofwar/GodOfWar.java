@@ -17,6 +17,7 @@ public class GodOfWar {
         
         FormPersonaggio fp = new FormPersonaggio();
         fp.setVisible(true);
+      
  
     }
     
