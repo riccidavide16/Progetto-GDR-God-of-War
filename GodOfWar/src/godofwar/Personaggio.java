@@ -53,7 +53,7 @@ public class Personaggio {
          n.setVita(n.getVita() - attacco);
     }
     
-    public void aggiungiRune(){
+    public void aggiungiRuna(){
         rune++;
     }
     

@@ -9,5 +9,18 @@ package godofwar;
  * @author Utente
  */
 public class GameManager {
+    private Personaggio p;
+    private int turno;
+    
+
+    public GameManager(Personaggio p, int turno) {
+        this.p = p;
+        this.turno = turno;
+    }
+    
+    public void avviaTurno(){
+        
+        
+    }
     
 }
