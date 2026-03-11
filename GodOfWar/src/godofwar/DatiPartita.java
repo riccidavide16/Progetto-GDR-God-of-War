@@ -21,6 +21,38 @@ public class DatiPartita {
         this.attacco = attacco;
         this.turno = turno;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getVita() {
+        return vita;
+    }
+
+    public void setVita(int vita) {
+        this.vita = vita;
+    }
+
+    public int getAttacco() {
+        return attacco;
+    }
+
+    public void setAttacco(int attacco) {
+        this.attacco = attacco;
+    }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
     
     
 }
