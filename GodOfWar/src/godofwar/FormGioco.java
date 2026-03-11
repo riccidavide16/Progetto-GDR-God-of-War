@@ -37,6 +37,10 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_Vita1 = new javax.swing.JLabel();
         lbl_valueVita = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        lbl_attacco1 = new javax.swing.JLabel();
+        lbl_valueAttacco1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,27 +48,31 @@ public class FormGioco extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        btm_AbilitaSpeciale.setText("Abilità Speciale");
+        btm_AbilitaSpeciale.setBackground(new java.awt.Color(101, 119, 171));
+        btm_AbilitaSpeciale.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
+        btm_AbilitaSpeciale.setText("Abilita' Speciale");
         jPanel1.add(btm_AbilitaSpeciale);
-        btm_AbilitaSpeciale.setBounds(340, 690, 150, 30);
+        btm_AbilitaSpeciale.setBounds(340, 690, 200, 30);
 
         lbl_attacco.setBackground(new java.awt.Color(255, 255, 255));
         lbl_attacco.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
         lbl_attacco.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_attacco.setText("Attacco");
+        lbl_attacco.setText("RUNE");
         lbl_attacco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(lbl_attacco);
-        lbl_attacco.setBounds(40, 680, 110, 28);
+        lbl_attacco.setBounds(40, 720, 110, 28);
 
+        btm_Attacca.setBackground(new java.awt.Color(101, 119, 171));
+        btm_Attacca.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
         btm_Attacca.setText("Attacca");
         jPanel1.add(btm_Attacca);
-        btm_Attacca.setBounds(340, 650, 150, 30);
+        btm_Attacca.setBounds(340, 650, 200, 30);
 
         lbl_valueAttacco.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
         lbl_valueAttacco.setForeground(new java.awt.Color(242, 242, 242));
         lbl_valueAttacco.setText("0");
         jPanel1.add(lbl_valueAttacco);
-        lbl_valueAttacco.setBounds(180, 680, 100, 30);
+        lbl_valueAttacco.setBounds(140, 720, 100, 30);
 
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
@@ -88,6 +96,32 @@ public class FormGioco extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
         jPanel1.add(jLabel2);
         jLabel2.setBounds(870, 200, 390, 380);
+
+        jButton1.setBackground(new java.awt.Color(101, 119, 171));
+        jButton1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
+        jButton1.setText("Salva Partita");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(20, 20, 170, 30);
+
+        lbl_attacco1.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_attacco1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
+        lbl_attacco1.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_attacco1.setText("Attacco");
+        lbl_attacco1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(lbl_attacco1);
+        lbl_attacco1.setBounds(40, 680, 110, 28);
+
+        lbl_valueAttacco1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
+        lbl_valueAttacco1.setForeground(new java.awt.Color(242, 242, 242));
+        lbl_valueAttacco1.setText("0");
+        jPanel1.add(lbl_valueAttacco1);
+        lbl_valueAttacco1.setBounds(180, 680, 100, 30);
+
+        jButton2.setBackground(new java.awt.Color(101, 119, 171));
+        jButton2.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
+        jButton2.setText("Esplora");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(570, 650, 140, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\SfondoPersonaggio.jpg")); // NOI18N
         jPanel1.add(jLabel1);
@@ -127,13 +161,17 @@ public class FormGioco extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btm_AbilitaSpeciale;
     private javax.swing.JButton btm_Attacca;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_Vita1;
     private javax.swing.JLabel lbl_attacco;
+    private javax.swing.JLabel lbl_attacco1;
     private javax.swing.JLabel lbl_valueAttacco;
+    private javax.swing.JLabel lbl_valueAttacco1;
     private javax.swing.JLabel lbl_valueVita;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,46 +28,46 @@ public class FormPersonaggio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        lbl_freya = new javax.swing.JLabel();
+        lbl_atreus = new javax.swing.JLabel();
+        lbl_kratos = new javax.swing.JLabel();
+        btm_atreus = new javax.swing.JButton();
+        btm_kratos = new javax.swing.JButton();
+        btm_freya = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 280, 380, 380);
+        lbl_freya.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
+        getContentPane().add(lbl_freya);
+        lbl_freya.setBounds(40, 280, 380, 380);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Not_atreus_of_sparta.webp-removebg-preview.png")); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(420, 180, 400, 420);
+        lbl_atreus.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Not_atreus_of_sparta.webp-removebg-preview.png")); // NOI18N
+        getContentPane().add(lbl_atreus);
+        lbl_atreus.setBounds(420, 180, 400, 420);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(860, 290, 260, 420);
+        lbl_kratos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
+        getContentPane().add(lbl_kratos);
+        lbl_kratos.setBounds(860, 290, 260, 420);
 
-        jButton1.setBackground(new java.awt.Color(126, 89, 80));
-        jButton1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 14)); // NOI18N
-        jButton1.setText("Atreus");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(480, 590, 140, 23);
+        btm_atreus.setBackground(new java.awt.Color(126, 89, 80));
+        btm_atreus.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 14)); // NOI18N
+        btm_atreus.setText("Atreus");
+        getContentPane().add(btm_atreus);
+        btm_atreus.setBounds(480, 590, 140, 23);
 
-        jButton2.setBackground(new java.awt.Color(126, 89, 80));
-        jButton2.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 12)); // NOI18N
-        jButton2.setText("KRATOS");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(920, 730, 150, 23);
+        btm_kratos.setBackground(new java.awt.Color(126, 89, 80));
+        btm_kratos.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 12)); // NOI18N
+        btm_kratos.setText("KRATOS");
+        getContentPane().add(btm_kratos);
+        btm_kratos.setBounds(920, 730, 150, 23);
 
-        jButton3.setBackground(new java.awt.Color(126, 89, 80));
-        jButton3.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 12)); // NOI18N
-        jButton3.setText("FREYA");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(70, 710, 150, 23);
+        btm_freya.setBackground(new java.awt.Color(126, 89, 80));
+        btm_freya.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 12)); // NOI18N
+        btm_freya.setText("FREYA");
+        getContentPane().add(btm_freya);
+        btm_freya.setBounds(70, 710, 150, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Gemini_Generated_Image_75ru3y75ru3y75ru.png")); // NOI18N
         getContentPane().add(jLabel1);
@@ -102,12 +102,12 @@ public class FormPersonaggio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btm_atreus;
+    private javax.swing.JButton btm_freya;
+    private javax.swing.JButton btm_kratos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lbl_atreus;
+    private javax.swing.JLabel lbl_freya;
+    private javax.swing.JLabel lbl_kratos;
     // End of variables declaration//GEN-END:variables
 }

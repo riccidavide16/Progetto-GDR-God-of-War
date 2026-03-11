@@ -14,12 +14,14 @@ public class DatiPartita {
     private int vita;
     private int attacco;
     private int turno;
+    private int runa;
 
-    public DatiPartita(String nome, int vita, int attacco, int turno) {
+    public DatiPartita(String nome, int vita, int attacco, int turno, int runa) {
         this.nome = nome;
         this.vita = vita;
         this.attacco = attacco;
         this.turno = turno;
+        this.runa = runa;
     }
 
     public String getNome() {
@@ -52,6 +54,14 @@ public class DatiPartita {
 
     public void setTurno(int turno) {
         this.turno = turno;
+    }
+    
+    public int getRune(){
+        return runa;
+    }
+    
+    public void setRune(int runa){
+        this.runa = runa;
     }
     
     

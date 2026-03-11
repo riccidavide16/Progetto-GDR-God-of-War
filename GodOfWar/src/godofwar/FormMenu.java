@@ -28,18 +28,26 @@ public class FormMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btm_caricaPartita = new javax.swing.JButton();
+        btm_nuovaPartita = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        btm_caricaPartita.setBackground(new java.awt.Color(134, 184, 210));
+        btm_caricaPartita.setText("Carica Partita");
+        getContentPane().add(btm_caricaPartita);
+        btm_caricaPartita.setBounds(560, 360, 200, 23);
+
+        btm_nuovaPartita.setBackground(new java.awt.Color(134, 184, 210));
+        btm_nuovaPartita.setText("Nuova Partita");
+        getContentPane().add(btm_nuovaPartita);
+        btm_nuovaPartita.setBounds(560, 310, 200, 23);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\Gemini_Generated_Image_cf78hlcf78hlcf78.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-40, -40, 1520, 840);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -70,5 +78,8 @@ public class FormMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btm_caricaPartita;
+    private javax.swing.JButton btm_nuovaPartita;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
