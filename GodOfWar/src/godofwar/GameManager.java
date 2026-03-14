@@ -10,17 +10,21 @@ package godofwar;
  */
 public class GameManager {
     private Personaggio p;
+    private Evento evento;
     private int turno;
+    private boolean partitaFinita;
     
 
-    public GameManager(Personaggio p, int turno) {
+    public GameManager(Personaggio p) {
         this.p = p;
-        this.turno = turno;
+        this.turno = 0;
+        this.partitaFinita = false;
     }
     
-    public void avviaTurno(){
+    public void avviaGioco(){
         
-        
+       evento.generaEvento();
+       turno++;
     }
     
 }

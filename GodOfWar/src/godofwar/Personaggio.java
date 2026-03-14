@@ -60,11 +60,11 @@ public class Personaggio {
     
     public void abilitàSpeciale(Nemico n)
     {
-        if (eff == "Molt")
+        if (eff.equals("moltiplica"))
         {
            attacco = attacco * value;
         }
-        else if (eff == "som"){
+        else if (eff.equals("somma")){
          
         n.setVita(n.getVita()-(attacco + 10));
         

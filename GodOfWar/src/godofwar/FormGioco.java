@@ -41,6 +41,8 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_attacco1 = new javax.swing.JLabel();
         lbl_valueAttacco1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        lbl_turno = new javax.swing.JLabel();
+        lbl_turnoValue = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,7 +79,7 @@ public class FormGioco extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(40, 160, 310, 420);
+        jLabel4.setBounds(70, 160, 310, 420);
 
         lbl_Vita1.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Vita1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
@@ -95,7 +97,7 @@ public class FormGioco extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(870, 200, 390, 380);
+        jLabel2.setBounds(640, 210, 390, 380);
 
         jButton1.setBackground(new java.awt.Color(101, 119, 171));
         jButton1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
@@ -122,6 +124,18 @@ public class FormGioco extends javax.swing.JFrame {
         jButton2.setText("Esplora");
         jPanel1.add(jButton2);
         jButton2.setBounds(570, 650, 140, 70);
+
+        lbl_turno.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 24)); // NOI18N
+        lbl_turno.setForeground(new java.awt.Color(242, 242, 242));
+        lbl_turno.setText("TURNO");
+        jPanel1.add(lbl_turno);
+        lbl_turno.setBounds(510, 40, 130, 40);
+
+        lbl_turnoValue.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 24)); // NOI18N
+        lbl_turnoValue.setForeground(new java.awt.Color(242, 242, 242));
+        lbl_turnoValue.setText("0");
+        jPanel1.add(lbl_turnoValue);
+        lbl_turnoValue.setBounds(650, 40, 70, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\SfondoPersonaggio.jpg")); // NOI18N
         jPanel1.add(jLabel1);
@@ -170,6 +184,8 @@ public class FormGioco extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Vita1;
     private javax.swing.JLabel lbl_attacco;
     private javax.swing.JLabel lbl_attacco1;
+    private javax.swing.JLabel lbl_turno;
+    private javax.swing.JLabel lbl_turnoValue;
     private javax.swing.JLabel lbl_valueAttacco;
     private javax.swing.JLabel lbl_valueAttacco1;
     private javax.swing.JLabel lbl_valueVita;

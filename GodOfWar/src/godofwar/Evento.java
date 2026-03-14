@@ -16,7 +16,7 @@ public class Evento {
     
     private Personaggio p;
     private Nemico n;
-    private int evento = r.nextInt(4) ;
+   
 
     public Evento() {
         
@@ -53,8 +53,9 @@ public class Evento {
         }
     }
     
-    public Void generaEvento(){
-      
+    public void generaEvento(){
+       int evento = r.nextInt(4) ;
+       
         if(evento == 0){
             p.setVita(p.getVita()+20);
             
@@ -68,7 +69,7 @@ public class Evento {
             combattimento(p,n);
         }
         
-        return null;
+        
         
         
     }
