@@ -11,11 +11,15 @@ package godofwar;
 public class FormMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormMenu.class.getName());
+    
+     FileManager fm = new FileManager();
+     FormMenu fm1;
 
     /**
      * Creates new form FormMenu
      */
     public FormMenu() {
+       
         initComponents();
     }
 
@@ -37,11 +41,21 @@ public class FormMenu extends javax.swing.JFrame {
 
         btm_caricaPartita.setBackground(new java.awt.Color(134, 184, 210));
         btm_caricaPartita.setText("Carica Partita");
+        btm_caricaPartita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_caricaPartitaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btm_caricaPartita);
         btm_caricaPartita.setBounds(560, 360, 200, 23);
 
         btm_nuovaPartita.setBackground(new java.awt.Color(134, 184, 210));
         btm_nuovaPartita.setText("Nuova Partita");
+        btm_nuovaPartita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_nuovaPartitaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btm_nuovaPartita);
         btm_nuovaPartita.setBounds(560, 310, 200, 23);
 
@@ -52,11 +66,24 @@ public class FormMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btm_nuovaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_nuovaPartitaActionPerformed
+        FormPersonaggio fp = new FormPersonaggio();
+        fp.setVisible(true);
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_btm_nuovaPartitaActionPerformed
+
+    private void btm_caricaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_caricaPartitaActionPerformed
+      fm.caricaPartita();
+    }//GEN-LAST:event_btm_caricaPartitaActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 

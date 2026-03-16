@@ -16,6 +16,7 @@ public class FormGioco extends javax.swing.JFrame {
      * Creates new form FormGioco
      */
     public FormGioco() {
+        Personaggio p;
         initComponents();
     }
 
@@ -33,16 +34,18 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_attacco = new javax.swing.JLabel();
         btm_Attacca = new javax.swing.JButton();
         lbl_valueAttacco = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lbl_Personaggio = new javax.swing.JLabel();
         lbl_Vita1 = new javax.swing.JLabel();
         lbl_valueVita = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lbl_Nemico = new javax.swing.JLabel();
+        bmt_SalvaPartita = new javax.swing.JButton();
         lbl_attacco1 = new javax.swing.JLabel();
         lbl_valueAttacco1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btm_turno = new javax.swing.JButton();
         lbl_turno = new javax.swing.JLabel();
         lbl_turnoValue = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,10 +79,10 @@ public class FormGioco extends javax.swing.JFrame {
         jPanel1.add(lbl_valueAttacco);
         lbl_valueAttacco.setBounds(140, 720, 100, 30);
 
-        jLabel4.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(70, 160, 310, 420);
+        lbl_Personaggio.setForeground(new java.awt.Color(242, 242, 242));
+        lbl_Personaggio.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
+        jPanel1.add(lbl_Personaggio);
+        lbl_Personaggio.setBounds(70, 160, 310, 420);
 
         lbl_Vita1.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Vita1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
@@ -95,15 +98,15 @@ public class FormGioco extends javax.swing.JFrame {
         jPanel1.add(lbl_valueVita);
         lbl_valueVita.setBounds(130, 640, 100, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(640, 210, 390, 380);
+        lbl_Nemico.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
+        jPanel1.add(lbl_Nemico);
+        lbl_Nemico.setBounds(640, 170, 430, 410);
 
-        jButton1.setBackground(new java.awt.Color(101, 119, 171));
-        jButton1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
-        jButton1.setText("Salva Partita");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(20, 20, 170, 30);
+        bmt_SalvaPartita.setBackground(new java.awt.Color(101, 119, 171));
+        bmt_SalvaPartita.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
+        bmt_SalvaPartita.setText("Salva Partita");
+        jPanel1.add(bmt_SalvaPartita);
+        bmt_SalvaPartita.setBounds(20, 20, 170, 30);
 
         lbl_attacco1.setBackground(new java.awt.Color(255, 255, 255));
         lbl_attacco1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
@@ -119,11 +122,11 @@ public class FormGioco extends javax.swing.JFrame {
         jPanel1.add(lbl_valueAttacco1);
         lbl_valueAttacco1.setBounds(180, 680, 100, 30);
 
-        jButton2.setBackground(new java.awt.Color(101, 119, 171));
-        jButton2.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
-        jButton2.setText("Esplora");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(570, 650, 140, 70);
+        btm_turno.setBackground(new java.awt.Color(101, 119, 171));
+        btm_turno.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
+        btm_turno.setText("Esplora");
+        jPanel1.add(btm_turno);
+        btm_turno.setBounds(570, 650, 140, 70);
 
         lbl_turno.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 24)); // NOI18N
         lbl_turno.setForeground(new java.awt.Color(242, 242, 242));
@@ -136,6 +139,16 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_turnoValue.setText("0");
         jPanel1.add(lbl_turnoValue);
         lbl_turnoValue.setBounds(650, 40, 70, 40);
+
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(242, 242, 242));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(1140, 450, 290, 370);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\SfondoPersonaggio.jpg")); // NOI18N
         jPanel1.add(jLabel1);
@@ -151,7 +164,14 @@ public class FormGioco extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        
+        Personaggio p = new Personaggio("Kratos",120,15,"moltiplica",2);
+        Personaggio p2 = new Personaggio("Kratos",120,15,"moltiplica",2);
+        Personaggio p3 = new Personaggio("Kratos",120,15,"moltiplica",2);
+        
+        
+        
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -167,20 +187,24 @@ public class FormGioco extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new FormGioco().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bmt_SalvaPartita;
     private javax.swing.JButton btm_AbilitaSpeciale;
     private javax.swing.JButton btm_Attacca;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btm_turno;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lbl_Nemico;
+    private javax.swing.JLabel lbl_Personaggio;
     private javax.swing.JLabel lbl_Vita1;
     private javax.swing.JLabel lbl_attacco;
     private javax.swing.JLabel lbl_attacco1;

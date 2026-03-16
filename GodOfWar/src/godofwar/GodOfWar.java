@@ -15,8 +15,10 @@ public class GodOfWar {
      */
     public static void main(String[] args) {
         
-        FormPersonaggio fp = new FormPersonaggio();
-        fp.setVisible(true);
+        FormMenu fm = new FormMenu();
+        fm.setVisible(true);
+        
+        
       
  
     }

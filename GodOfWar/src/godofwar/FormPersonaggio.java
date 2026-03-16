@@ -16,6 +16,7 @@ public class FormPersonaggio extends javax.swing.JFrame {
      * Creates new form FormPersonaggio
      */
     public FormPersonaggio() {
+        Personaggio p;
         initComponents();
     }
 
@@ -54,18 +55,33 @@ public class FormPersonaggio extends javax.swing.JFrame {
         btm_atreus.setBackground(new java.awt.Color(126, 89, 80));
         btm_atreus.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 14)); // NOI18N
         btm_atreus.setText("Atreus");
+        btm_atreus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_atreusActionPerformed(evt);
+            }
+        });
         getContentPane().add(btm_atreus);
         btm_atreus.setBounds(480, 590, 140, 23);
 
         btm_kratos.setBackground(new java.awt.Color(126, 89, 80));
         btm_kratos.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 12)); // NOI18N
         btm_kratos.setText("KRATOS");
+        btm_kratos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_kratosActionPerformed(evt);
+            }
+        });
         getContentPane().add(btm_kratos);
         btm_kratos.setBounds(920, 730, 150, 23);
 
         btm_freya.setBackground(new java.awt.Color(126, 89, 80));
         btm_freya.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 12)); // NOI18N
         btm_freya.setText("FREYA");
+        btm_freya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_freyaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btm_freya);
         btm_freya.setBounds(70, 710, 150, 23);
 
@@ -75,6 +91,19 @@ public class FormPersonaggio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btm_freyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_freyaActionPerformed
+       Personaggio p1 = new Personaggio("Freya",100,10,"somma",20);
+    }//GEN-LAST:event_btm_freyaActionPerformed
+
+    private void btm_atreusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_atreusActionPerformed
+       Personaggio p2 = new Personaggio("Atreus",100,10,"moltilplica",2);
+    }//GEN-LAST:event_btm_atreusActionPerformed
+
+    private void btm_kratosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_kratosActionPerformed
+       Personaggio p3 = new Personaggio("Kratos",120,10,"moltiplica",2);
+       p3.setVita(140);
+    }//GEN-LAST:event_btm_kratosActionPerformed
 
     /**
      * @param args the command line arguments

@@ -58,7 +58,7 @@ public class Personaggio {
     }
     
     
-    public void abilitàSpeciale(Nemico n)
+    public void abilitàSpeciale(Nemico n,Personaggio p)
     {
         if (eff.equals("moltiplica"))
         {
@@ -66,9 +66,7 @@ public class Personaggio {
         }
         else if (eff.equals("somma")){
          
-        n.setVita(n.getVita()-(attacco + 10));
-        
-        attacco = attacco + value;
+        p.setVita(p.getVita() + value);
         }  
         
         

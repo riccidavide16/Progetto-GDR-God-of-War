@@ -25,6 +25,9 @@ public class GameManager {
         
        evento.generaEvento();
        turno++;
+       if(turno ==10){
+           
+       }
     }
     
 }

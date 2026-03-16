@@ -4,9 +4,10 @@
  */
 package godofwar;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 
 /**
  *
@@ -21,21 +22,22 @@ public class FileManager {
 
         try {
 
-            PrintWriter writer = new PrintWriter(new FileWriter(file));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 
-            writer.println(dati.getNome());
-            writer.println(dati.getVita());
-            writer.println(dati.getAttacco());
-            writer.println(dati.getRune());
-            writer.println(dati.getTurno());
+            writer.write(dati.getNome());
+            writer.write(dati.getVita());
+            writer.write(dati.getAttacco());
+            writer.write(dati.getRune());
+            writer.write(dati.getTurno());
 
             writer.close();
-
 
         }
         catch (IOException e){
             
         }
     }
-    
+    public void caricaPartita(){
+        
+    }    
 }

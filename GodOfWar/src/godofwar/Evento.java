@@ -57,14 +57,16 @@ public class Evento {
        int evento = r.nextInt(4) ;
        
         if(evento == 0){
+            System.out.println("Un Dio Greco di ha donato 20 di vita usala bene");
             p.setVita(p.getVita()+20);
             
         }
         else if(evento == 1){
-            p.setAttacco(p.getAttacco()+ 5);
-           
+             System.out.println("Un Dio Greco crede in te e ti ha rafforzato con 5 di attacco in piu");
+             p.setAttacco(p.getAttacco()+ 5);
         }
         else  if(evento == 2){
+            System.out.println("Il fato ha voluto che devi combattare "); 
              n = generaNemico();
             combattimento(p,n);
         }
