@@ -28,7 +28,7 @@
     <Component class="javax.swing.JLabel" name="lbl_freya">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Utente\Desktop\Progetto-GDR God of War\Freya_Render_God_Of_War_2018.png"/>
+          <Image iconType="2" name="C:\Users\Utente\Desktop\Progetto-GDR God of War\immagini\Freya_Render_God_Of_War_2018.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -40,7 +40,7 @@
     <Component class="javax.swing.JLabel" name="lbl_atreus">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Utente\Desktop\Progetto-GDR God of War\Not_atreus_of_sparta.webp-removebg-preview.png"/>
+          <Image iconType="2" name="C:\Users\Utente\Desktop\Progetto-GDR God of War\immagini\Not_atreus_of_sparta.webp-removebg-preview.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -121,7 +121,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Utente\Desktop\Progetto-GDR God of War\Gemini_Generated_Image_75ru3y75ru3y75ru.png"/>
+          <Image iconType="2" name="C:\Users\Utente\Desktop\Progetto-GDR God of War\immagini\Gemini_Generated_Image_75ru3y75ru3y75ru.png"/>
         </Property>
       </Properties>
       <Constraints>

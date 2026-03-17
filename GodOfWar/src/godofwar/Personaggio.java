@@ -41,6 +41,14 @@ public class Personaggio {
         this.vita = vita;
     }
 
+    public int getRune() {
+        return rune;
+    }
+
+    public void setRune(int rune) {
+        this.rune = rune;
+    }
+
     public int getAttacco() {
         return attacco;
     }

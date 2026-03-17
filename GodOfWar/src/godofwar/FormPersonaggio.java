@@ -18,6 +18,8 @@ public class FormPersonaggio extends javax.swing.JFrame {
     public FormPersonaggio() {
         Personaggio p;
         initComponents();
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -40,11 +42,11 @@ public class FormPersonaggio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        lbl_freya.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
+        lbl_freya.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Freya_Render_God_Of_War_2018.png")); // NOI18N
         getContentPane().add(lbl_freya);
         lbl_freya.setBounds(40, 280, 380, 380);
 
-        lbl_atreus.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Not_atreus_of_sparta.webp-removebg-preview.png")); // NOI18N
+        lbl_atreus.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Not_atreus_of_sparta.webp-removebg-preview.png")); // NOI18N
         getContentPane().add(lbl_atreus);
         lbl_atreus.setBounds(420, 180, 400, 420);
 
@@ -85,7 +87,7 @@ public class FormPersonaggio extends javax.swing.JFrame {
         getContentPane().add(btm_freya);
         btm_freya.setBounds(70, 710, 150, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Gemini_Generated_Image_75ru3y75ru3y75ru.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Gemini_Generated_Image_75ru3y75ru3y75ru.png")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-160, -220, 1470, 1230);
 
@@ -94,15 +96,24 @@ public class FormPersonaggio extends javax.swing.JFrame {
 
     private void btm_freyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_freyaActionPerformed
        Personaggio p1 = new Personaggio("Freya",100,10,"somma",20);
+       FormGioco fg = new FormGioco(p1);
+       fg.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btm_freyaActionPerformed
 
     private void btm_atreusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_atreusActionPerformed
        Personaggio p2 = new Personaggio("Atreus",100,10,"moltilplica",2);
+       FormGioco fg = new FormGioco(p2);
+       fg.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btm_atreusActionPerformed
 
     private void btm_kratosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_kratosActionPerformed
        Personaggio p3 = new Personaggio("Kratos",120,10,"moltiplica",2);
        p3.setVita(140);
+       FormGioco fg = new FormGioco(p3);
+       fg.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btm_kratosActionPerformed
 
     /**

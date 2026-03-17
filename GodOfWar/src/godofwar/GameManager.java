@@ -20,6 +20,15 @@ public class GameManager {
         this.turno = 0;
         this.partitaFinita = false;
     }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+    
     
     public void avviaGioco(){
         
