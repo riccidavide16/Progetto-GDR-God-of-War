@@ -53,6 +53,11 @@ public class FormGioco extends javax.swing.JFrame {
             lbl_Personaggio.setIcon(new ImageIcon("../immagini/Freya_Render_God_Of_War_2018.png/"));
         }
     }
+    private void scriviEvento(String testo) {
+        
+    areaEventi.append(testo + "\n");
+    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,6 +83,8 @@ public class FormGioco extends javax.swing.JFrame {
         btm_turno = new javax.swing.JButton();
         lbl_turno = new javax.swing.JLabel();
         lbl_turnoValue = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        areaEventi = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -157,6 +164,11 @@ public class FormGioco extends javax.swing.JFrame {
         btm_turno.setBackground(new java.awt.Color(101, 119, 171));
         btm_turno.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
         btm_turno.setText("Esplora");
+        btm_turno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_turnoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btm_turno);
         btm_turno.setBounds(570, 650, 140, 70);
 
@@ -172,6 +184,17 @@ public class FormGioco extends javax.swing.JFrame {
         jPanel1.add(lbl_turnoValue);
         lbl_turnoValue.setBounds(650, 40, 70, 40);
 
+        areaEventi.setEditable(false);
+        areaEventi.setBackground(new java.awt.Color(0, 0, 0));
+        areaEventi.setColumns(20);
+        areaEventi.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 14)); // NOI18N
+        areaEventi.setForeground(new java.awt.Color(242, 242, 242));
+        areaEventi.setRows(5);
+        jScrollPane1.setViewportView(areaEventi);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(1190, 10, 240, 150);
+
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\SfondoPersonaggio.jpg")); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, -80, 1430, 990);
@@ -181,6 +204,15 @@ public class FormGioco extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btm_turnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_turnoActionPerformed
+        
+        game.avviaGioco();
+        scriviEvento("Turno " + game.getTurno());
+        aggiornaInterfaccia();
+         
+         
+    }//GEN-LAST:event_btm_turnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,12 +249,14 @@ public class FormGioco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea areaEventi;
     private javax.swing.JButton bmt_SalvaPartita;
     private javax.swing.JButton btm_AbilitaSpeciale;
     private javax.swing.JButton btm_Attacca;
     private javax.swing.JButton btm_turno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_Nemico;
     private javax.swing.JLabel lbl_Personaggio;
     private javax.swing.JLabel lbl_Vita1;

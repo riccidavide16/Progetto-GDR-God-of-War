@@ -14,12 +14,13 @@ public class Evento {
     
     Random r = new Random();
     
-    private Personaggio p;
+    
     private Nemico n;
    
 
     public Evento() {
         
+      
     }
     
     
@@ -53,7 +54,7 @@ public class Evento {
         }
     }
     
-    public void generaEvento(){
+    public void generaEvento(Personaggio p){
        int evento = r.nextInt(4) ;
        
         if(evento == 0){

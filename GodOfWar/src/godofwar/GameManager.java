@@ -13,12 +13,14 @@ public class GameManager {
     private Evento evento;
     private int turno;
     private boolean partitaFinita;
+    private String risp;
     
 
     public GameManager(Personaggio p) {
         this.p = p;
-        this.turno = 0;
+        this.turno = 1;
         this.partitaFinita = false;
+        evento = new Evento();
     }
 
     public int getTurno() {
@@ -30,13 +32,15 @@ public class GameManager {
     }
     
     
-    public void avviaGioco(){
+    public String avviaGioco(){
         
-       evento.generaEvento();
+       evento.generaEvento(p);
+       risp = " turno" + turno;
        turno++;
-       if(turno ==10){
-           
+       if(turno == 10){
+           partitaFinita = true;
        }
+       return risp;
     }
     
 }
