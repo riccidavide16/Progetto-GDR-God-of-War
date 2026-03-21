@@ -19,7 +19,7 @@ public class Evento {
    
 
     public Evento() {
-        
+       
       
     }
     
@@ -54,23 +54,28 @@ public class Evento {
         }
     }
     
-    public void generaEvento(Personaggio p){
+    public String generaEvento(Personaggio p){
        int evento = r.nextInt(4) ;
        
         if(evento == 0){
-            System.out.println("Un Dio Greco di ha donato 20 di vita usala bene");
+            
             p.setVita(p.getVita()+20);
+            return "Un Dio Greco di ha donato 20 di vita usala bene";
             
         }
         else if(evento == 1){
-             System.out.println("Un Dio Greco crede in te e ti ha rafforzato con 5 di attacco in piu");
+            
              p.setAttacco(p.getAttacco()+ 5);
+             return "Un Dio Greco crede in te e ti ha rafforzato con 5 di attacco in piu";
         }
         else  if(evento == 2){
-            System.out.println("Il fato ha voluto che devi combattare "); 
+           
              n = generaNemico();
             combattimento(p,n);
+            return "Il fato ha voluto che devi combattare ";
         }
+        
+         return "Un Dio Greco ti ha battezzato e passerai un turno tranquillo";
         
         
         

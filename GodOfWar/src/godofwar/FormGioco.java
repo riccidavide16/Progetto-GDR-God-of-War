@@ -76,7 +76,7 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_Personaggio = new javax.swing.JLabel();
         lbl_Vita1 = new javax.swing.JLabel();
         lbl_valueVita = new javax.swing.JLabel();
-        lbl_Nemico = new javax.swing.JLabel();
+        lbl_Evento = new javax.swing.JLabel();
         bmt_SalvaPartita = new javax.swing.JButton();
         lbl_attacco = new javax.swing.JLabel();
         lbl_valueAttacco = new javax.swing.JLabel();
@@ -131,15 +131,13 @@ public class FormGioco extends javax.swing.JFrame {
         jPanel1.add(lbl_Vita1);
         lbl_Vita1.setBounds(40, 640, 70, 28);
 
-        lbl_valueVita.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
+        lbl_valueVita.setFont(new java.awt.Font("Arial", 2, 24)); // NOI18N
         lbl_valueVita.setForeground(new java.awt.Color(242, 242, 242));
         lbl_valueVita.setText("0");
         jPanel1.add(lbl_valueVita);
         lbl_valueVita.setBounds(130, 640, 100, 30);
-
-        lbl_Nemico.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\Freya_Render_God_Of_War_2018.png")); // NOI18N
-        jPanel1.add(lbl_Nemico);
-        lbl_Nemico.setBounds(640, 170, 430, 410);
+        jPanel1.add(lbl_Evento);
+        lbl_Evento.setBounds(640, 170, 430, 410);
 
         bmt_SalvaPartita.setBackground(new java.awt.Color(101, 119, 171));
         bmt_SalvaPartita.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
@@ -193,7 +191,7 @@ public class FormGioco extends javax.swing.JFrame {
         jScrollPane1.setViewportView(areaEventi);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(1190, 10, 240, 150);
+        jScrollPane1.setBounds(990, 10, 440, 150);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\SfondoPersonaggio.jpg")); // NOI18N
         jPanel1.add(jLabel1);
@@ -207,9 +205,12 @@ public class FormGioco extends javax.swing.JFrame {
 
     private void btm_turnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_turnoActionPerformed
         
-        game.avviaGioco();
-        scriviEvento("Turno " + game.getTurno());
-        aggiornaInterfaccia();
+       String risultato = game.avviaGioco();
+
+       areaEventi.setText(risultato);
+       lbl_valueVita.setText(" " + personaggio.getVita());
+       lbl_valueRuna.setText(" " + personaggio.getRune());
+       lbl_valueAttacco.setText(" " + personaggio.getAttacco());
          
          
     }//GEN-LAST:event_btm_turnoActionPerformed
@@ -257,7 +258,7 @@ public class FormGioco extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lbl_Nemico;
+    private javax.swing.JLabel lbl_Evento;
     private javax.swing.JLabel lbl_Personaggio;
     private javax.swing.JLabel lbl_Vita1;
     private javax.swing.JLabel lbl_attacco;

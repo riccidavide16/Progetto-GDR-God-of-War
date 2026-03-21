@@ -146,7 +146,7 @@
         <Component class="javax.swing.JLabel" name="lbl_valueVita">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Kratos TrueType - GOD $ WAR" size="24" style="2"/>
+              <Font name="Arial" size="24" style="2"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -159,12 +159,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbl_Nemico">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Utente\Desktop\Progetto-GDR God of War\Freya_Render_God_Of_War_2018.png"/>
-            </Property>
-          </Properties>
+        <Component class="javax.swing.JLabel" name="lbl_Evento">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="640" y="170" width="430" height="410"/>
@@ -282,7 +277,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1190" y="10" width="240" height="150"/>
+              <AbsoluteConstraints x="990" y="10" width="440" height="150"/>
             </Constraint>
           </Constraints>
 

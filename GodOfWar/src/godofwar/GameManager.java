@@ -13,7 +13,9 @@ public class GameManager {
     private Evento evento;
     private int turno;
     private boolean partitaFinita;
-    private String risp;
+    private String eventoTesto ;
+    
+    
     
 
     public GameManager(Personaggio p) {
@@ -35,12 +37,14 @@ public class GameManager {
     public String avviaGioco(){
         
        evento.generaEvento(p);
-       risp = " turno" + turno;
+       eventoTesto = evento.generaEvento(p);
+
+       String risultato = "Turno: " + turno + "\n" + eventoTesto;
        turno++;
        if(turno == 10){
            partitaFinita = true;
        }
-       return risp;
+       return risultato;
     }
     
 }
