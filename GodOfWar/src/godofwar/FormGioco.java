@@ -4,7 +4,11 @@
  */
 package godofwar;
 
+import java.awt.Image;
+import java.io.IOException;
+import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -30,27 +34,30 @@ public class FormGioco extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         aggiornaInterfaccia();
         aggiornaImmagine();
+        lbl_Evento.setHorizontalAlignment(JLabel.CENTER);
+        lbl_Evento.setVerticalAlignment(JLabel.CENTER);
     }
+        
     private void aggiornaInterfaccia() {
 
-    lbl_valueVita.setText("" + personaggio.getVita());
-    lbl_valueRuna.setText("" + personaggio.getRune());
-    lbl_valueAttacco.setText("" + personaggio.getAttacco());
-    lbl_turnoValue.setText(""+ game.getTurno());
+    lbl_valueVita.setText(" " + personaggio.getVita());
+    lbl_valueRuna.setText(" " + personaggio.getRune());
+    lbl_valueAttacco.setText(" " + personaggio.getAttacco());
+    lbl_turnoValue.setText(" "+ game.getTurno());
     }
     private void aggiornaImmagine() {
 
         if(personaggio.getNome().equals("Kratos")) {
             
-            lbl_Personaggio.setIcon(new ImageIcon("../immagini/kratos_PS4.png"));
+            lbl_Personaggio.setIcon(new ImageIcon("src/immagini/kratos_PS4.png"));
         }
 
         if(personaggio.getNome().equals("Atreus")) {
-            lbl_Personaggio.setIcon(new ImageIcon("../immagini/Not_atreus_of_sparta.webp-removebg-preview.png/"));
+            lbl_Personaggio.setIcon(new ImageIcon("src/immagini/Not_atreus_of_sparta.webp-removebg-preview.png/"));
         }
 
         if(personaggio.getNome().equals("Freya")) {
-            lbl_Personaggio.setIcon(new ImageIcon("../immagini/Freya_Render_God_Of_War_2018.png/"));
+            lbl_Personaggio.setIcon(new ImageIcon("src/immagini/Freya_Render_God_Of_War_2018.png/"));
         }
     }
     private void scriviEvento(String testo) {
@@ -131,17 +138,22 @@ public class FormGioco extends javax.swing.JFrame {
         jPanel1.add(lbl_Vita1);
         lbl_Vita1.setBounds(40, 640, 70, 28);
 
-        lbl_valueVita.setFont(new java.awt.Font("Arial", 2, 24)); // NOI18N
+        lbl_valueVita.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 2, 24)); // NOI18N
         lbl_valueVita.setForeground(new java.awt.Color(242, 242, 242));
         lbl_valueVita.setText("0");
         jPanel1.add(lbl_valueVita);
         lbl_valueVita.setBounds(130, 640, 100, 30);
         jPanel1.add(lbl_Evento);
-        lbl_Evento.setBounds(640, 170, 430, 410);
+        lbl_Evento.setBounds(520, 180, 430, 410);
 
         bmt_SalvaPartita.setBackground(new java.awt.Color(101, 119, 171));
         bmt_SalvaPartita.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
         bmt_SalvaPartita.setText("Salva Partita");
+        bmt_SalvaPartita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bmt_SalvaPartitaActionPerformed(evt);
+            }
+        });
         jPanel1.add(bmt_SalvaPartita);
         bmt_SalvaPartita.setBounds(20, 20, 170, 30);
 
@@ -191,7 +203,7 @@ public class FormGioco extends javax.swing.JFrame {
         jScrollPane1.setViewportView(areaEventi);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(990, 10, 440, 150);
+        jScrollPane1.setBounds(970, 10, 460, 90);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\SfondoPersonaggio.jpg")); // NOI18N
         jPanel1.add(jLabel1);
@@ -205,15 +217,63 @@ public class FormGioco extends javax.swing.JFrame {
 
     private void btm_turnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_turnoActionPerformed
         
-       String risultato = game.avviaGioco();
+       EventoRisultato risultato = game.avviaGioco();
+       System.out.println("TIPO: " + risultato.getTipo());
+       // IMMAGINE EVENTO
+URL url = null;
 
-       areaEventi.setText(risultato);
+if (risultato.getTipo().equals("combattimento")) {
+    url = FormGioco.class.getResource("/immagini/balder.png");
+} else if (risultato.getTipo().equals("Attacco")) {
+    url = FormGioco.class.getResource("/immagini/dio_forza.png");
+} else if (risultato.getTipo().equals("Cura")) {
+    url = FormGioco.class.getResource("/immagini/dio_vita.png");
+}
+
+// controllo sicurezza
+if (url == null) {
+    System.out.println("Immagine non trovata!");
+} else {
+    lbl_Evento.setIcon(new ImageIcon(url));
+}
+
+       areaEventi.setText("turno :" + game.getTurno() + "\n" +risultato.getTesto());
        lbl_valueVita.setText(" " + personaggio.getVita());
        lbl_valueRuna.setText(" " + personaggio.getRune());
        lbl_valueAttacco.setText(" " + personaggio.getAttacco());
+       lbl_turnoValue.setText(" " + game.getTurno());
+       
+   
+
+    
+       
+
+    // immagine evento
+        ImageIcon icon = new ImageIcon(getClass().getResource(risultato.getTesto()));
+        lbl_Evento.setIcon(icon);
          
          
     }//GEN-LAST:event_btm_turnoActionPerformed
+
+    private void bmt_SalvaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmt_SalvaPartitaActionPerformed
+        
+        
+            Personaggio p = game.getPersonaggio();
+            DatiPartita dati = new DatiPartita(p.getNome(),p.getVita(),p.getAttacco(),p.getRune(),game.getTurno());
+            FileManager fm = new FileManager();
+            
+        try {
+            fm.salvaPartita(dati);
+         } 
+        catch (IOException ex) {
+          
+        }
+        
+         
+       
+      
+        
+    }//GEN-LAST:event_bmt_SalvaPartitaActionPerformed
 
     /**
      * @param args the command line arguments

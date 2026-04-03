@@ -36,6 +36,7 @@ public class FormMenu extends javax.swing.JFrame {
 
         btm_caricaPartita = new javax.swing.JButton();
         btm_nuovaPartita = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,6 +62,17 @@ public class FormMenu extends javax.swing.JFrame {
         getContentPane().add(btm_nuovaPartita);
         btm_nuovaPartita.setBounds(560, 310, 200, 23);
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 12)); // NOI18N
+        jButton1.setText("i");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(20, 20, 20, 21);
+
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\Gemini_Generated_Image_cf78hlcf78hlcf78.png")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-40, -40, 1520, 840);
@@ -79,6 +91,11 @@ public class FormMenu extends javax.swing.JFrame {
     private void btm_caricaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_caricaPartitaActionPerformed
       fm.caricaPartita();
     }//GEN-LAST:event_btm_caricaPartitaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      Creatore c = new Creatore();
+      c.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,6 +126,7 @@ public class FormMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btm_caricaPartita;
     private javax.swing.JButton btm_nuovaPartita;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

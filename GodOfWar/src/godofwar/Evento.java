@@ -15,7 +15,8 @@ public class Evento {
     Random r = new Random();
     
     
-    private Nemico n;
+    private Nemico n1;
+    private Personaggio p;
    
 
     public Evento() {
@@ -34,8 +35,10 @@ public class Evento {
         return nemici[r.nextInt(nemici.length)];
     }
     
-    public void combattimento(Personaggio p1, Nemico n1){
+    public EventoRisultato combattimento(Personaggio p1){
+        
         String ris = "hai incontrato"+ n1.getNome();
+        
          while(n1.getVita() > 0 && p1.getVita() > 0) {
 
             n1.setVita(n1.getVita() - p1.getAttacco());
@@ -50,34 +53,32 @@ public class Evento {
             ris += "Hai sconfitto " + n1.getNome() + " e ottenuto 1 runa";
         }
         else {
-            ris += "Sei stato sconfitto";
+            p1.setVita(0);
+            ris += "Sei stato sconfitto ";
         }
+        return new EventoRisultato(ris, "combattimento");
     }
     
-    public String generaEvento(Personaggio p){
-       int evento = r.nextInt(4) ;
+    public EventoRisultato generaEvento(Personaggio p){
+       int evento = r.nextInt(3) ;
        
-        if(evento == 0){
+        if(evento == 1){
             
             p.setVita(p.getVita()+20);
-            return "Un Dio Greco di ha donato 20 di vita usala bene";
+            return new EventoRisultato("Un Dio Greco di ha donato 20 di vita usala bene","Cura");
             
         }
-        else if(evento == 1){
+        else if(evento == 2){
             
              p.setAttacco(p.getAttacco()+ 5);
-             return "Un Dio Greco crede in te e ti ha rafforzato con 5 di attacco in piu";
+             return new EventoRisultato("Un Dio Greco crede in te e ti ha rafforzato con 5 di attacco in piu","Attacco");
         }
-        else  if(evento == 2){
+        else {
            
-             n = generaNemico();
-            combattimento(p,n);
-            return "Il fato ha voluto che devi combattare ";
+             n1 = generaNemico();
+            
+            return combattimento(p);
         }
-        
-         return "Un Dio Greco ti ha battezzato e passerai un turno tranquillo";
-        
-        
         
         
     }

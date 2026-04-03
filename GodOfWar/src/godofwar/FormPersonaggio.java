@@ -42,15 +42,15 @@ public class FormPersonaggio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        lbl_freya.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Freya_Render_God_Of_War_2018.png")); // NOI18N
+        lbl_freya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/immagini/Freya_Render_God_Of_War_2018.png"))); // NOI18N
         getContentPane().add(lbl_freya);
         lbl_freya.setBounds(40, 280, 380, 380);
 
-        lbl_atreus.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Not_atreus_of_sparta.webp-removebg-preview.png")); // NOI18N
+        lbl_atreus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/immagini/Not_atreus_of_sparta.webp-removebg-preview.png"))); // NOI18N
         getContentPane().add(lbl_atreus);
         lbl_atreus.setBounds(420, 180, 400, 420);
 
-        lbl_kratos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
+        lbl_kratos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/immagini/Kratos_PS4.png"))); // NOI18N
         getContentPane().add(lbl_kratos);
         lbl_kratos.setBounds(860, 290, 260, 420);
 
@@ -87,7 +87,7 @@ public class FormPersonaggio extends javax.swing.JFrame {
         getContentPane().add(btm_freya);
         btm_freya.setBounds(70, 710, 150, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Gemini_Generated_Image_75ru3y75ru3y75ru.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/immagini/Gemini_Generated_Image_75ru3y75ru3y75ru.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-160, -220, 1470, 1230);
 

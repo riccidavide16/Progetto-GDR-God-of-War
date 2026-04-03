@@ -4,6 +4,7 @@
  */
 package godofwar;
 
+
 /**
  *
  * @author Utente
@@ -20,7 +21,7 @@ public class GameManager {
 
     public GameManager(Personaggio p) {
         this.p = p;
-        this.turno = 1;
+        this.turno = 0;
         this.partitaFinita = false;
         evento = new Evento();
     }
@@ -33,17 +34,27 @@ public class GameManager {
         this.turno = turno;
     }
     
-    
-    public String avviaGioco(){
-        
-       evento.generaEvento(p);
-       eventoTesto = evento.generaEvento(p);
+   
 
-       String risultato = "Turno: " + turno + "\n" + eventoTesto;
-       turno++;
-       if(turno == 10){
+    public Personaggio getPersonaggio() {
+        return p;
+    }
+    
+    
+    public EventoRisultato avviaGioco(){
+        
+      partitaFinita = false;
+      if(turno == 10 || p.getVita() == 0){
+           
            partitaFinita = true;
        }
+       
+       EventoRisultato risultato = evento.generaEvento(p);
+       turno++;
+
+       
+       
+       
        return risultato;
     }
     
