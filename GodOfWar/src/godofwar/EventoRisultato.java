@@ -12,13 +12,17 @@ public class EventoRisultato {
     
     private String testo;
     private String tipo;
-    
-    public EventoRisultato(String te , String t){
-        this.testo = te;
-        this.tipo = t;
-        
+    private String nomeNemico;
+
+    public String getNomeNemico() {
+        return nomeNemico;
     }
 
+    public void setNomeNemico(String nomeNemico) {
+        this.nomeNemico = nomeNemico;
+    }
+    
+    
     public String getTesto() {
         return testo;
     }
@@ -26,5 +30,14 @@ public class EventoRisultato {
     public String getTipo() {
         return tipo;
     }
+
+    public void setTesto(String testo) {
+        this.testo = testo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
     
 }

@@ -15,7 +15,7 @@ import javax.swing.JLabel;
  * @author Utente
  */
 public class FormGioco extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormGioco.class.getName());
 
     /**
@@ -23,10 +23,9 @@ public class FormGioco extends javax.swing.JFrame {
      */
     private Personaggio personaggio;
     private GameManager game;
-    
-    
+
     public FormGioco(Personaggio p) {
-        
+
         this.personaggio = p;
         game = new GameManager(personaggio);
         initComponents();
@@ -37,33 +36,55 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_Evento.setHorizontalAlignment(JLabel.CENTER);
         lbl_Evento.setVerticalAlignment(JLabel.CENTER);
     }
-        
+
     private void aggiornaInterfaccia() {
 
-    lbl_valueVita.setText(" " + personaggio.getVita());
-    lbl_valueRuna.setText(" " + personaggio.getRune());
-    lbl_valueAttacco.setText(" " + personaggio.getAttacco());
-    lbl_turnoValue.setText(" "+ game.getTurno());
+        lbl_valueVita.setText(" " + personaggio.getVita());
+        lbl_valueRuna.setText(" " + personaggio.getRune());
+        lbl_valueAttacco.setText(" " + personaggio.getAttacco());
+        lbl_turnoValue.setText(" " + game.getTurno());
     }
+
     private void aggiornaImmagine() {
 
-        if(personaggio.getNome().equals("Kratos")) {
-            
+        if (personaggio.getNome().equals("Kratos")) {
+
             lbl_Personaggio.setIcon(new ImageIcon("src/immagini/kratos_PS4.png"));
         }
 
-        if(personaggio.getNome().equals("Atreus")) {
+        if (personaggio.getNome().equals("Atreus")) {
             lbl_Personaggio.setIcon(new ImageIcon("src/immagini/Not_atreus_of_sparta.webp-removebg-preview.png/"));
         }
 
-        if(personaggio.getNome().equals("Freya")) {
+        if (personaggio.getNome().equals("Freya")) {
             lbl_Personaggio.setIcon(new ImageIcon("src/immagini/Freya_Render_God_Of_War_2018.png/"));
         }
     }
+
+    private void setImage(String path) {
+
+        java.net.URL url = getClass().getResource(path);
+
+        if (url == null) {
+            System.out.println("Immagine NON trovata: " + path);
+            return;
+        }
+
+        ImageIcon icon = new ImageIcon(url);
+
+        Image img = icon.getImage().getScaledInstance(
+                lbl_Evento.getWidth(),
+                lbl_Evento.getHeight(),
+                Image.SCALE_SMOOTH
+        );
+
+        lbl_Evento.setIcon(new ImageIcon(img));
+    }
+
     private void scriviEvento(String testo) {
-        
-    areaEventi.append(testo + "\n");
-    
+
+        areaEventi.append(testo + "\n");
+
     }
 
     /**
@@ -102,6 +123,11 @@ public class FormGioco extends javax.swing.JFrame {
         btm_AbilitaSpeciale.setBackground(new java.awt.Color(101, 119, 171));
         btm_AbilitaSpeciale.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
         btm_AbilitaSpeciale.setText("Abilita' Speciale");
+        btm_AbilitaSpeciale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_AbilitaSpecialeActionPerformed(evt);
+            }
+        });
         jPanel1.add(btm_AbilitaSpeciale);
         btm_AbilitaSpeciale.setBounds(340, 690, 200, 30);
 
@@ -116,6 +142,11 @@ public class FormGioco extends javax.swing.JFrame {
         btm_Attacca.setBackground(new java.awt.Color(101, 119, 171));
         btm_Attacca.setFont(new java.awt.Font("Kratos TrueType - GOD $ WAR", 0, 18)); // NOI18N
         btm_Attacca.setText("Attacca");
+        btm_Attacca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm_AttaccaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btm_Attacca);
         btm_Attacca.setBounds(340, 650, 200, 30);
 
@@ -126,7 +157,6 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_valueRuna.setBounds(150, 720, 100, 30);
 
         lbl_Personaggio.setForeground(new java.awt.Color(242, 242, 242));
-        lbl_Personaggio.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\immagini\\Kratos_PS4.png")); // NOI18N
         jPanel1.add(lbl_Personaggio);
         lbl_Personaggio.setBounds(70, 160, 310, 420);
 
@@ -216,77 +246,63 @@ public class FormGioco extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btm_turnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_turnoActionPerformed
-        
-       EventoRisultato risultato = game.avviaGioco();
-       System.out.println("TIPO: " + risultato.getTipo());
-       // IMMAGINE EVENTO
-URL url = null;
 
-if (risultato.getTipo().equals("combattimento")) {
-    url = FormGioco.class.getResource("/immagini/balder.png");
-} else if (risultato.getTipo().equals("Attacco")) {
-    url = FormGioco.class.getResource("/immagini/dio_forza.png");
-} else if (risultato.getTipo().equals("Cura")) {
-    url = FormGioco.class.getResource("/immagini/dio_vita.png");
-}
+        EventoRisultato risultato = game.avviaGioco();
+        areaEventi.setText("turno :" + game.getTurno() + "\n" + risultato.getTesto());
+        String tipo = risultato.getTesto();
+        String nemico = risultato.getNomeNemico();
 
-// controllo sicurezza
-if (url == null) {
-    System.out.println("Immagine non trovata!");
-} else {
-    lbl_Evento.setIcon(new ImageIcon(url));
-}
+        lbl_valueVita.setText(" " + personaggio.getVita());
+        lbl_valueRuna.setText(" " + personaggio.getRune());
+        lbl_valueAttacco.setText(" " + personaggio.getAttacco());
+        lbl_turnoValue.setText(" " + game.getTurno());
+        if ("combattimento".equals(risultato.getTipo())) {
+            lbl_Evento.setIcon(new ImageIcon(getClass().getResource("/immagini/balder.png")));
+            
+        } else if ("cura".equals(risultato.getTipo())) {
+            lbl_Evento.setIcon(new ImageIcon(getClass().getResource("/immagini/dio_vita.png")));
+        } else if ("attacco".equals(risultato.getTipo())) {
+            lbl_Evento.setIcon(new ImageIcon(getClass().getResource("/immagini/dio_forza.png")));
+        }
 
-       areaEventi.setText("turno :" + game.getTurno() + "\n" +risultato.getTesto());
-       lbl_valueVita.setText(" " + personaggio.getVita());
-       lbl_valueRuna.setText(" " + personaggio.getRune());
-       lbl_valueAttacco.setText(" " + personaggio.getAttacco());
-       lbl_turnoValue.setText(" " + game.getTurno());
-       
-   
 
-    
-       
-
-    // immagine evento
-        ImageIcon icon = new ImageIcon(getClass().getResource(risultato.getTesto()));
-        lbl_Evento.setIcon(icon);
-         
-         
     }//GEN-LAST:event_btm_turnoActionPerformed
 
     private void bmt_SalvaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmt_SalvaPartitaActionPerformed
-        
-        
-            Personaggio p = game.getPersonaggio();
-            DatiPartita dati = new DatiPartita(p.getNome(),p.getVita(),p.getAttacco(),p.getRune(),game.getTurno());
-            FileManager fm = new FileManager();
-            
+
+        Personaggio p = game.getPersonaggio();
+        DatiPartita dati = new DatiPartita(p.getNome(), p.getVita(), p.getAttacco(), p.getRune(), game.getTurno());
+        FileManager fm = new FileManager();
+
         try {
             fm.salvaPartita(dati);
-         } 
-        catch (IOException ex) {
-          
+        } catch (IOException ex) {
+
         }
-        
-         
-       
-      
-        
+
+
     }//GEN-LAST:event_bmt_SalvaPartitaActionPerformed
+
+    private void btm_AttaccaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_AttaccaActionPerformed
+        String ris = game.attacco();
+        areaEventi.setText(ris);
+    }//GEN-LAST:event_btm_AttaccaActionPerformed
+
+    private void btm_AbilitaSpecialeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_AbilitaSpecialeActionPerformed
+        String ris = game.abilitaSpeciale();
+
+        areaEventi.setText(ris);
+    }//GEN-LAST:event_btm_AbilitaSpecialeActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        Personaggio p = new Personaggio("Kratos",120,15,"moltiplica",2);
-        Personaggio p2 = new Personaggio("Kratos",120,15,"moltiplica",2);
-        Personaggio p3 = new Personaggio("Kratos",120,15,"moltiplica",2);
-        
-        
-        
-        
+
+        Personaggio p = new Personaggio("Kratos", 120, 15, "moltiplica", 2);
+        Personaggio p2 = new Personaggio("Kratos", 120, 15, "moltiplica", 2);
+        Personaggio p3 = new Personaggio("Kratos", 120, 15, "moltiplica", 2);
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -302,8 +318,6 @@ if (url == null) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
-        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new FormGioco(p).setVisible(true));

@@ -13,6 +13,7 @@ public class Nemico {
     private String nome;
     private int vita;
     private int attacco;
+    private boolean vivo;
     
     public Nemico(String nome,int vita,int attacco)
     {
@@ -44,5 +45,17 @@ public class Nemico {
     public void setAttacco(int attacco) {
         this.attacco = attacco;
     }
+    public void subisciDanno(int danno) {
+        vita -= danno;
+        if (vita < 0){
+             vita = 0;
+        }
+           
+    }
+
+    public boolean isVivo() {
+        return vivo;
+    }
+    
     
 }

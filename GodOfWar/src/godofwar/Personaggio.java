@@ -17,6 +17,7 @@ public class Personaggio {
     private int rune;
     private String eff;
     private int value;
+    private Personaggio p;
 
     public Personaggio(String nome, int vita, int attacco,String eff, int value) {
         this.nome = nome;
@@ -62,23 +63,37 @@ public class Personaggio {
          n.setVita(n.getVita() - attacco);
     }
     
+    public void subisciDanno(int danno) {
+        vita -= danno;
+        if (vita < 0){
+             vita = 0;
+        }
+           
+    }
+
+    
     public void aggiungiRuna(){
         rune++;
     }
     
     
-    public void abilitàSpeciale(Nemico n,Personaggio p)
+    public String abilitàSpeciale(Nemico n)
     {
         if (eff.equals("moltiplica"))
         {
-           attacco = attacco * value;
+           int danno = attacco * value;
+           n.subisciDanno(danno);
+           
+           return "ABILITA' ATTIVATA : " + danno + "danni";
         }
         else if (eff.equals("somma")){
          
-        p.setVita(p.getVita() + value);
+         p.setVita(p.getVita() + value);
+         
+         return"ABILITA' ATTIVATA : " + vita + "vita aggiunta";
         }  
         
-        
+        return "nessuna abulita";
     }
         
         

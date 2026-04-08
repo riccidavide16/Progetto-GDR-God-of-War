@@ -89,7 +89,7 @@ public class FormMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btm_nuovaPartitaActionPerformed
 
     private void btm_caricaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_caricaPartitaActionPerformed
-      fm.caricaPartita();
+   //   fm.caricaPartita();
     }//GEN-LAST:event_btm_caricaPartitaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
