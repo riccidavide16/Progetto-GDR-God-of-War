@@ -35,6 +35,7 @@ public class FormGioco extends javax.swing.JFrame {
         aggiornaImmagine();
         lbl_Evento.setHorizontalAlignment(JLabel.CENTER);
         lbl_Evento.setVerticalAlignment(JLabel.CENTER);
+        lbl_Evento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     }
 
     private void aggiornaInterfaccia() {
@@ -60,6 +61,7 @@ public class FormGioco extends javax.swing.JFrame {
             lbl_Personaggio.setIcon(new ImageIcon("src/immagini/Freya_Render_God_Of_War_2018.png/"));
         }
     }
+    
 
     private void setImage(String path) {
 
@@ -256,13 +258,43 @@ public class FormGioco extends javax.swing.JFrame {
         lbl_valueRuna.setText(" " + personaggio.getRune());
         lbl_valueAttacco.setText(" " + personaggio.getAttacco());
         lbl_turnoValue.setText(" " + game.getTurno());
-        if ("combattimento".equals(risultato.getTipo())) {
-            lbl_Evento.setIcon(new ImageIcon(getClass().getResource("/immagini/balder.png")));
-            
-        } else if ("cura".equals(risultato.getTipo())) {
-            lbl_Evento.setIcon(new ImageIcon(getClass().getResource("/immagini/dio_vita.png")));
-        } else if ("attacco".equals(risultato.getTipo())) {
-            lbl_Evento.setIcon(new ImageIcon(getClass().getResource("/immagini/dio_forza.png")));
+        if("Combattimento".equalsIgnoreCase(risultato.getTipo())){
+            URL url2 = getClass().getResource("/immagini/balder.png");
+            ImageIcon icon = new ImageIcon(url2);
+
+        Image img2 = icon.getImage().getScaledInstance( 50, 50, Image.SCALE_SMOOTH);
+               
+        lbl_Evento.setIcon(new ImageIcon(img2));
+
+        if (url2 == null) {
+            System.out.println("ERRORE: immagine NON trovata!");
+        } else {
+            lbl_Evento.setIcon(new ImageIcon(url2));
+        }
+        }
+        else if("attacco".equalsIgnoreCase(risultato.getTipo())){
+        URL url1 = getClass().getResource("/immagini/dio_forza.png");
+        lbl_Evento.setIcon(new ImageIcon(url1));
+
+        if (url1 == null) {
+            System.out.println("ERRORE: immagine NON trovata!");
+        } else {
+            lbl_Evento.setIcon(new ImageIcon(url1));
+        }
+        }
+        else if("cura".equalsIgnoreCase(risultato.getTipo())){
+            URL url = getClass().getResource("/immagini/vita.png");
+            ImageIcon icon = new ImageIcon(url);
+
+        Image img = icon.getImage().getScaledInstance( 250, 250, Image.SCALE_SMOOTH);
+               
+        lbl_Evento.setIcon(new ImageIcon(img));
+
+        if (url == null) {
+            System.out.println("ERRORE: immagine NON trovata!");
+        } else {
+            lbl_Evento.setIcon(new ImageIcon(url));
+        }
         }
 
 
@@ -279,6 +311,7 @@ public class FormGioco extends javax.swing.JFrame {
         } catch (IOException ex) {
 
         }
+        
 
 
     }//GEN-LAST:event_bmt_SalvaPartitaActionPerformed

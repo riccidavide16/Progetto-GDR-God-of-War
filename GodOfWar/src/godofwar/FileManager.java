@@ -4,12 +4,17 @@
  */
 package godofwar;
 
+import static java.awt.JobAttributes.DestinationType.FILE;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 
 /**
@@ -20,6 +25,7 @@ public class FileManager {
     
     
     private String file = "salvataggio.txt";
+    private String file1 = "salvataggio.dat";
     
     public void salvaPartita(DatiPartita dati) throws IOException {
 
@@ -56,5 +62,36 @@ public class FileManager {
         catch (IOException e){
             return null;
         }
-    }    
+    }  
+    
+     public void salvaPartitaSer(GameManager game) {
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file1));
+                    
+            out.writeObject(game);
+            out.close();
+
+            System.out.println("Partita salvata!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    
+    public GameManager caricaPartitaSer() {
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(file1));
+              
+
+            GameManager game = (GameManager) in.readObject();
+            in.close();
+
+            System.out.println("Partita caricata!");
+            return game;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
