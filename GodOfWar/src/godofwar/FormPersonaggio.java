@@ -102,7 +102,7 @@ public class FormPersonaggio extends javax.swing.JFrame {
     }//GEN-LAST:event_btm_freyaActionPerformed
 
     private void btm_atreusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_atreusActionPerformed
-       Personaggio p2 = new Personaggio("Atreus",100,10,"moltilplica",2);
+       Personaggio p2 = new Personaggio("Atreus",100,10,"moltiplica",2);
        FormGioco fg = new FormGioco(p2);
        fg.setVisible(true);
        this.dispose();

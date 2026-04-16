@@ -4,23 +4,22 @@
  */
 package godofwar;
 
+import java.io.Serializable;
 
 /**
  *
  * @author Utente
  */
-public class GameManager {
+public class GameManager implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private Personaggio p;
     private Evento evento;
     private Nemico n;
     private int turno;
     private boolean partitaFinita;
     private boolean inCombattimento;
-    
-    
-    
-    
-    
 
     public GameManager(Personaggio p) {
         this.p = p;
@@ -37,65 +36,68 @@ public class GameManager {
     public void setTurno(int turno) {
         this.turno = turno;
     }
-    
-   
 
     public Personaggio getPersonaggio() {
         return p;
     }
-    
-    
-    public EventoRisultato avviaGioco(){
-        
-      partitaFinita = false;
-      if(turno == 10 || p.getVita() == 0){
-           
-           partitaFinita = true;
-       }
-       
-       EventoRisultato risultato = evento.generaEvento(p);
-       if(risultato.getTipo().equals("combattimento")){
-           n = evento.creaNemico(risultato.getNomeNemico());
-           inCombattimento = true;
-       }
-       turno++;
 
-       
-       return risultato;
+    public EventoRisultato avviaGioco() {
+
+        partitaFinita = false;
+        if (turno == 10 || p.getVita() == 0) {
+
+            partitaFinita = true;
+        }
+
+        EventoRisultato risultato = evento.generaEvento(p);
+        if (risultato.getTipo().equals("combattimento")) {
+            n = evento.creaNemico(risultato.getNomeNemico());
+            inCombattimento = true;
+        }
+        turno++;
+
+        return risultato;
     }
-    public String attacco(){
+
+    public String attacco() {
+        if (!inCombattimento || n == null) {
+            return "Non sei in combattimento";
+        }
+
         n.setVita(n.getVita() - p.getAttacco());
 
         String testo = "Colpito il SELCIARINO, ";
-        if(n.getVita() < 0){
+        if (n.getVita() <= 0) {
             testo += "Hai sconfitto " + n.getNome();
             inCombattimento = false;
             return testo;
         }
         p.subisciDanno(n.getAttacco());
         testo += "Il SELCIARINO ti ha colpito";
-        if(p.getVita() < 0){
+        if (p.getVita() <= 0) {
             partitaFinita = true;
             testo += "Sei morto, Vergognati";
         }
-        
+
         return testo;
     }
-    
+
     public String abilitaSpeciale() {
 
-    if (!inCombattimento) return "Non sei in combattimento";
+        if (!inCombattimento || n == null) {
+            return "Non sei in combattimento";
+        }
 
-    String risultato = p.abilitàSpeciale(n);
+        String risultato = p.abilitàSpeciale(n);
 
-    // controllo morte nemico
-    if (!n.isVivo()) {
-        risultato += "\nHai sconfitto " + n.getNome();
-        inCombattimento = false;
-        n = null;
+        // controllo morte nemico
+        if (!n.isVivo()) {
+            risultato += "\nHai sconfitto " + n.getNome();
+            inCombattimento = false;
+            n = null;
+        }
+
+        return risultato;
     }
 
-    return risultato;
-}
-    
 }

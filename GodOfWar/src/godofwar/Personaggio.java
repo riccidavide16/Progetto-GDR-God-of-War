@@ -4,22 +4,24 @@
  */
 package godofwar;
 
+import java.io.Serializable;
 
 /**
  *
  * @author Utente
  */
-public class Personaggio {
-    
+public class Personaggio implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String nome;
     private int vita;
     private int attacco;
     private int rune;
     private String eff;
     private int value;
-    private Personaggio p;
 
-    public Personaggio(String nome, int vita, int attacco,String eff, int value) {
+    public Personaggio(String nome, int vita, int attacco, String eff, int value) {
         this.nome = nome;
         this.vita = vita;
         this.attacco = attacco;
@@ -58,50 +60,37 @@ public class Personaggio {
     public void setAttacco(int attacco) {
         this.attacco = attacco;
     }
-    
-    public void attacca(Nemico n){
-         n.setVita(n.getVita() - attacco);
+
+    public void attacca(Nemico n) {
+        n.setVita(n.getVita() - attacco);
     }
-    
+
     public void subisciDanno(int danno) {
         vita -= danno;
-        if (vita < 0){
-             vita = 0;
+        if (vita < 0) {
+            vita = 0;
         }
-           
+
     }
 
-    
-    public void aggiungiRuna(){
+    public void aggiungiRuna() {
         rune++;
     }
-    
-    
-    public String abilitàSpeciale(Nemico n)
-    {
-        if (eff.equals("moltiplica"))
-        {
-           int danno = attacco * value;
-           n.subisciDanno(danno);
-           
-           return "ABILITA' ATTIVATA : " + danno + "danni";
+
+    public String abilitàSpeciale(Nemico n) {
+        if (eff.equals("moltiplica")) {
+            int danno = attacco * value;
+            n.subisciDanno(danno);
+
+            return "ABILITA' ATTIVATA : " + danno + " danni";
+        } else if (eff.equals("somma")) {
+
+            setVita(getVita() + value);
+
+            return "ABILITA' ATTIVATA : " + value + " vita aggiunta";
         }
-        else if (eff.equals("somma")){
-         
-         p.setVita(p.getVita() + value);
-         
-         return"ABILITA' ATTIVATA : " + vita + "vita aggiunta";
-        }  
-        
-        return "nessuna abulita";
+
+        return "nessuna abilita";
     }
-        
-        
-        
-        
-  }
-    
-    
-   
 
-
+}

@@ -4,13 +4,16 @@
  */
 package godofwar;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  *
  * @author Utente
  */
-public class Evento {
+public class Evento implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     Random r = new Random();
 

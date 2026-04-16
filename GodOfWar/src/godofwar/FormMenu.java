@@ -37,24 +37,12 @@ public class FormMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btm_caricaPartita = new javax.swing.JButton();
         btm_nuovaPartita = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        btm_caricaPartita1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        btm_caricaPartita.setBackground(new java.awt.Color(134, 184, 210));
-        btm_caricaPartita.setText("Carica Partita");
-        btm_caricaPartita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btm_caricaPartitaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btm_caricaPartita);
-        btm_caricaPartita.setBounds(560, 400, 200, 23);
 
         btm_nuovaPartita.setBackground(new java.awt.Color(134, 184, 210));
         btm_nuovaPartita.setText("Nuova Partita");
@@ -77,16 +65,6 @@ public class FormMenu extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(20, 20, 20, 21);
 
-        btm_caricaPartita1.setBackground(new java.awt.Color(134, 184, 210));
-        btm_caricaPartita1.setText("Carica Partita");
-        btm_caricaPartita1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btm_caricaPartita1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btm_caricaPartita1);
-        btm_caricaPartita1.setBounds(560, 360, 200, 23);
-
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Utente\\Desktop\\Progetto-GDR God of War\\GodOfWar\\Gemini_Generated_Image_cf78hlcf78hlcf78.png")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-40, -40, 1520, 840);
@@ -102,22 +80,10 @@ public class FormMenu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btm_nuovaPartitaActionPerformed
 
-    private void btm_caricaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_caricaPartitaActionPerformed
-        try {
-            fm.caricaPartita();
-        } catch (IOException ex) {
-            System.getLogger(FormMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        }
-    }//GEN-LAST:event_btm_caricaPartitaActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       Creatore c = new Creatore();
       c.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void btm_caricaPartita1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm_caricaPartita1ActionPerformed
-       
-    }//GEN-LAST:event_btm_caricaPartita1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,8 +112,6 @@ public class FormMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btm_caricaPartita;
-    private javax.swing.JButton btm_caricaPartita1;
     private javax.swing.JButton btm_nuovaPartita;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

@@ -4,16 +4,18 @@
  */
 package godofwar;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Utente
  */
-public class Nemico {
+public class Nemico implements Serializable {
+    private static final long serialVersionUID = 1L;
     
     private String nome;
     private int vita;
     private int attacco;
-    private boolean vivo;
     
     public Nemico(String nome,int vita,int attacco)
     {
@@ -54,7 +56,7 @@ public class Nemico {
     }
 
     public boolean isVivo() {
-        return vivo;
+        return vita > 0;
     }
     
     
